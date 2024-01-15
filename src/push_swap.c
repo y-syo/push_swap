@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:12:26 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/12 04:07:26 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/12 19:27:16 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,40 @@ puis utiliser atoi pour remplir la structure choisit
 si un nb est invalide, ne pas oublier de free, et renvoyer NULL*/
 t_stack *fill_struct(int ac, char **av)
 {
-	
+	char	**split_args;
+	t_stack	*stack;
+	t_stack	*new_node;
+	int		i;
+	int		j;
+
+	stack = NULL;
+	i = 1;
+	while (i < ac)
+	{
+		split_args = ft_split(av[i], ' ');
+		if (!split_args)
+		{
+			free(stack);
+			return (NULL);
+		}
+		j = 0;
+		while(split_args[j])
+		{
+			if(ft_verif_nb(split_args[j]))
+			{
+				new_node = ft_stacknew(ft_atoi(split_args[j]));
+				ft_stackadd_front(&stack, new_node);
+			}
+			else
+			{
+				free(stack);
+				free(split_args);
+				return (NULL);
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
 /*verifie si la liste ne contient aucun doublons*/
