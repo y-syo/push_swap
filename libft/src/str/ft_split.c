@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:59:11 by mmoussou          #+#    #+#             */
-/*   Updated: 2023/11/13 19:39:13 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:41:16 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ char	**ft_split(const char *str, char c)
 {
 	char	**result;
 
+	if (!str)
+		return (NULL);
 	result = malloc(sizeof(char *) * (word_counter(str, c) + 1));
 	if (result == NULL)
 		return (NULL);

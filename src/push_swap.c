@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:12:26 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/12 19:27:16 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:56:49 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_verif_nb(const char *str)
 {
 	long	atol;
 
-	if (!check_str(str))
+	if (check_str(str))
 		return (0);
 	atol = ft_atol(str);
 	if (atol > 2147483647 || atol < -2147483648)
@@ -66,7 +66,7 @@ t_stack *fill_struct(int ac, char **av)
 	int		j;
 
 	stack = NULL;
-	i = 1;
+	i = 0;
 	while (i < ac)
 	{
 		split_args = ft_split(av[i], ' ');
@@ -81,7 +81,7 @@ t_stack *fill_struct(int ac, char **av)
 			if(ft_verif_nb(split_args[j]))
 			{
 				new_node = ft_stacknew(ft_atoi(split_args[j]));
-				ft_stackadd_front(&stack, new_node);
+				ft_stackadd_back(&stack, new_node);
 			}
 			else
 			{
@@ -93,6 +93,7 @@ t_stack *fill_struct(int ac, char **av)
 		}
 		i++;
 	}
+	return (stack);
 }
 
 /*verifie si la liste ne contient aucun doublons*/

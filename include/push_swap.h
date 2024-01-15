@@ -6,7 +6,7 @@
 /*   By: mmoussou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:29:05 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/12 19:22:38 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:31:07 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ int		ft_stacksize(t_stack *stack);
 t_stack	*ft_stacklast(t_stack *stack);
 void	ft_stackadd_back(t_stack **stack, t_stack *new);
 void	ft_stackadd_front(t_stack **stack, t_stack *new);
+
+t_stack *fill_struct(int ac, char **av);
 
 #endif
