@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:12:26 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/16 22:30:06 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/17 04:49:29 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int	verif_double(t_stack *stack)
 	while (stack->next)
 	{
 		stack_next = stack->next;
-		while(stack_next->next)
+		while(stack_next)
 		{
 			if (stack->nb_init == stack_next->nb_init)
 				return (0);
@@ -119,7 +119,6 @@ int	verif_double(t_stack *stack)
 	return (1);
 }
 
-//j'espere que le debut étais pas trop dur car voici un premier gros defi
 // tu dois "lisser" toutes les valeur, a partir de 0, et il n'y aura pas d'ecart superieur a 1
 // pour ca tu va assiger a chaque maillon->nb une valeur
 // qui depend de toute les nb_init de la list
@@ -127,10 +126,40 @@ int	verif_double(t_stack *stack)
 // -4 1 9 5 2 8 4 -> 0 1 6 4 2 5 3
 // une vision simple de le voir/le coder:
 //compter combien d'element dans toute la liste possede un nb_init en dessous du nb_init conserner
+int	get_nb_not_replaced(t_stack *stack)
+{
+	while(stack->next)
+	{
+		if (stack->nb == -1)
+			return (stack->nb_init);
+		stack = stack->next;
+	}
+	return (stack->nb_init);
+}
+
 void	replace_nb_init(t_stack *stack)
 {
-	/*assigne pour chaque maillon, un nb,
-	ce nb est la possition finale dans la liste trier qu'il aura*/
+	t_stack	*stack_tmp;
+	int		min;
+	int		i;
+
+	i = 0;
+	while (i < ft_stacksize(stack))
+	{
+		min = get_nb_not_replaced(stack);
+		stack_tmp = stack;
+		while (stack_tmp)
+		{
+			if (stack_tmp->nb_init < min && stack_tmp->nb == -1)
+				min = stack_tmp->nb_init;
+			stack_tmp = stack_tmp->next;
+		}
+		stack_tmp = stack;
+		while (stack_tmp->nb_init != min || stack_tmp->nb != -1)
+			stack_tmp = stack_tmp->next;
+		stack_tmp->nb = i;
+		i++;
+	}
 }
 
 
@@ -139,78 +168,97 @@ void	replace_nb_init(t_stack *stack)
 // a partir de mtn tu ne touche plus du tout a nb_init,
 // uniquement a nb
 
+/*verifie si la liste est trier*/
+
+/*
+renvoie un booléen si la liste est
+trier(1)
+pas trier(0)
+*/
 int	is_sorted(t_stack *stack_a)
 {
-	/*verifie si la liste est trier*/
-
-	/*renvoie un booléen si la liste est
-	trier(1)
-	pas trier(0)*/
-	return (0);
+	while (stack_a->next)
+	{
+		if (stack_a->nb > stack_a->next->nb)
+			return (0);
+		stack_a = stack_a->next;
+	}
+	return (1);
 }
 
 void	sa(t_stack *stack_a)
 {
 	/*echange les 2 elements en haut de la pile
 	print "sa"*/
+	ft_putendl_fd("sa", 1);
 }
 
 void	sb(t_stack *stack_b)
 {
 	/*echange les 2 elements en haut de la pile
 	print "sb"*/
+	ft_putendl_fd("sb", 1);
 }
 
 void	ss(t_stack *stack_a, t_stack *stack_b)
 {
 	/*effectue sa et sb
 	print "ss"*/
+	ft_putendl_fd("ss", 1);
 }
 
 void	pa(t_stack *stack_a, t_stack *stack_b)
 {
 	/*envoie l'element en haut de la pile b -> en haut de la pile a
 	print "pa"*/
+	ft_putendl_fd("pa", 1);
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
 {
 	/*envoie l'element en haut de la pile a -> en haut de la pile b
 	print "pb"*/
+	ft_putendl_fd("pb", 1);
 }
 
 void	ra(t_stack *stack_a)
 {
 	/*envoie l'element en haut de la pile a -> en bas de la pile a
 	print "ra"*/
+	ft_putendl_fd("ra", 1);
 }
 
 void	rb(t_stack *stack_b)
 {
 	/*envoie l'element en haut de la pile b -> en bas de la pile b
 	print "rb"*/
+	ft_putendl_fd("rb", 1);
 }
 
 void	rr(t_stack *stack_a, t_stack *stack_b)
 {
 	/*effectue ra et rb
 	print "rr"*/
+	ft_putendl_fd("rr", 1);
 }
 
 void	rra(t_stack *stack_a)
 {
 	/*envoie l'element en bas de la pile a -> en haut de la pile a
 	print "rra"*/
+	ft_putendl_fd("rra", 1);
 }
 
 void	rrb(t_stack *stack_b)
 {
 	/*envoie l'element en bas de la pile b -> en haut de la pile b
 	print "rrb"*/
+	ft_putendl_fd("rrb", 1);
 }
 
 void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
 	/*effectue rra et rrb
 	print "rrr"*/
+	ft_putendl_fd("rrr", 1);
 }

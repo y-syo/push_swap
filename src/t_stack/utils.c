@@ -6,7 +6,7 @@
 /*   By: mmoussou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 18:46:09 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/12 19:22:07 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/17 02:27:06 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_stack	*ft_stacknew(int content)
 	if (!new_element)
 		return (NULL);
 	new_element->nb_init = content;
-	new_element->nb = 0;
+	new_element->nb = -1;
 	new_element->next = NULL;
 	return (new_element);
 }
