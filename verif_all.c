@@ -126,16 +126,17 @@ void	main_verif_nb()
 
 void	main_fill_struct()
 {
+	printf("fill_struct: ");
 	int	ac = 4;
-	char **av = (char *[]){"1  2 3", "4 5  6","7    8        9" "10"};
+	char **av = (char *[]){"1  2 3", "4 5  6","7    8        9", "10"};
 	t_stack *stack = fill_struct(ac, av);
 	afficher_KO_OK(ft_stacksize(stack) == 10);
 	afficher_KO_OK(stack->nb_init == 1 && 
 		stack->next->nb_init == 2 && 
 		stack->next->next->nb_init == 3 &&
 		stack->next->next->next->nb_init == 4 && 
-		stack->next->next->next->next->next->nb_init == 5 && 
-		stack->next->next->next->next->next->next->nb_init == 6 &&
+		stack->next->next->next->next->nb_init == 5 && 
+		stack->next->next->next->next->next->nb_init == 6 &&
 		ft_stacklast(stack)->nb_init == 10);
 
 	ac = 1;
@@ -146,8 +147,8 @@ void	main_fill_struct()
 		stack->next->nb_init == 2 && 
 		stack->next->next->nb_init == 3 &&
 		stack->next->next->next->nb_init == 4 && 
-		stack->next->next->next->next->next->nb_init == 5 && 
-		stack->next->next->next->next->next->next->nb_init == 6 &&
+		stack->next->next->next->next->nb_init == 5 && 
+		stack->next->next->next->next->next->nb_init == 6 &&
 		ft_stacklast(stack)->nb_init == 10);
 
 	ac = 10;
@@ -158,14 +159,15 @@ void	main_fill_struct()
 		stack->next->nb_init == 2 && 
 		stack->next->next->nb_init == 3 &&
 		stack->next->next->next->nb_init == 4 && 
-		stack->next->next->next->next->next->nb_init == 5 && 
-		stack->next->next->next->next->next->next->nb_init == 6 &&
+		stack->next->next->next->next->nb_init == 5 && 
+		stack->next->next->next->next->next->nb_init == 6 &&
 		ft_stacklast(stack)->nb_init == 10);
 
 	ac = 10;
 	av = (char *[]){"1", "2", "3", "4", "5", "6", "7", "8", "9", "2147483648"};
 	stack = fill_struct(ac, av);
 	afficher_KO_OK(stack == NULL);
+	printf("\n");
 }
 
 void	main_verif_double()
@@ -188,7 +190,7 @@ void	main_verif_double()
 
 void	main_replace_nb_init()
 {
-	printf("verif_double: ");
+	printf("replace_nb_init: ");
 	t_stack *new = ft_stacknew(1000);
 	t_stack *new2 = ft_stacknew(1);
 	t_stack *new3 = ft_stacknew(20000);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verif.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoussou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 18:30:08 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/15 18:52:45 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/16 19:35:55 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	main(void)
 		stack->next->nb_init == 2 && 
 		stack->next->next->nb_init == 3 &&
 		stack->next->next->next->nb_init == 4 && 
-		stack->next->next->next->next->next->nb_init == 5 && 
-		stack->next->next->next->next->next->next->nb_init == 6 &&
+		stack->next->next->next->next->nb_init == 5 && 
+		stack->next->next->next->next->next->nb_init == 6 &&
 		ft_stacklast(stack)->nb_init == 10);
 
 	ac = 1;
@@ -42,8 +42,8 @@ int	main(void)
 		stack->next->nb_init == 2 && 
 		stack->next->next->nb_init == 3 &&
 		stack->next->next->next->nb_init == 4 && 
-		stack->next->next->next->next->next->nb_init == 5 && 
-		stack->next->next->next->next->next->next->nb_init == 6 &&
+		stack->next->next->next->next->nb_init == 5 && 
+		stack->next->next->next->next->next->nb_init == 6 &&
 		ft_stacklast(stack)->nb_init == 10);
 
 	ac = 10;
@@ -54,8 +54,8 @@ int	main(void)
 		stack->next->nb_init == 2 && 
 		stack->next->next->nb_init == 3 &&
 		stack->next->next->next->nb_init == 4 && 
-		stack->next->next->next->next->next->nb_init == 5 && 
-		stack->next->next->next->next->next->next->nb_init == 6 &&
+		stack->next->next->next->next->nb_init == 5 && 
+		stack->next->next->next->next->next->nb_init == 6 &&
 		ft_stacklast(stack)->nb_init == 10);
 
 	ac = 10;
