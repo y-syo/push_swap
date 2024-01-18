@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   verif_nb.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 22:00:18 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/18 14:19:50 by mmoussou         ###   ########.fr       */
+/*   Created: 2024/01/18 00:29:28 by mmoussou          #+#    #+#             */
+/*   Updated: 2024/01/18 14:13:29 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *str)
+int	check_str(const char *str)
 {
-	int				r;
-	unsigned int	i;
-	int				s;
+	int	i;
 
-	r = 0;
 	i = 0;
-	s = 1;
-	if (!str)
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i])
+	{
+		if (str[i] >= '0' || str[i] <= '9')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	ft_verif_nb(const char *str)
+{
+	long	atol;
+
+	if (check_str(str))
 		return (0);
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			s *= -1;
-		i++;
-	}
-	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
-	{
-		r = (r * 10) + (str[i] - '0');
-		i++;
-	}
-	return (r * s);
+	atol = ft_atol(str);
+	if (atol > 2147483647 || atol < -2147483648)
+		return (0);
+	return (1);
 }

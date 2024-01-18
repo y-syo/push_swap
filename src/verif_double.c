@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   verif_double.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 22:00:18 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/18 14:19:50 by mmoussou         ###   ########.fr       */
+/*   Created: 2024/01/18 07:29:57 by mmoussou          #+#    #+#             */
+/*   Updated: 2024/01/18 07:31:33 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *str)
+int	verif_double(t_stack *stack)
 {
-	int				r;
-	unsigned int	i;
-	int				s;
+	t_stack	*stack_next;
 
-	r = 0;
-	i = 0;
-	s = 1;
-	if (!str)
-		return (0);
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while (stack->next)
 	{
-		if (str[i] == '-')
-			s *= -1;
-		i++;
+		stack_next = stack->next;
+		while (stack_next)
+		{
+			if (stack->nb_init == stack_next->nb_init)
+				return (0);
+			stack_next = stack_next->next;
+		}
+		stack = stack->next;
 	}
-	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
-	{
-		r = (r * 10) + (str[i] - '0');
-		i++;
-	}
-	return (r * s);
+	return (1);
 }

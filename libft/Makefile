@@ -6,7 +6,7 @@
 #    By: lbouet   <@nix.os>                        +#+  +:+       #+#         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 16:34:08 by kroussar          #+#    #+#              #
-#    Updated: 2024/01/12 00:49:47 by mmoussou         ###   ########.fr        #
+#    Updated: 2024/01/18 01:03:37 by mmoussou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME = libft.a
 INCLUDE = include
 
 # find -type f -name "*.c" | sed "s/\.\///g" | xargs -Iname echo "`printf '\t\t\t'`" name "\\"
-SRCS = 		 src/io/get_next_line.c \
+SRCS =		 src/io/get_next_line.c \
 			 src/io/ft_putnbr_fd.c \
 			 src/io/ft_putuhex_fd.c \
 			 src/io/ft_putendl_fd.c \
@@ -29,6 +29,7 @@ SRCS = 		 src/io/get_next_line.c \
 			 src/mem/ft_memchr.c \
 			 src/mem/ft_calloc.c \
 			 src/mem/ft_memcpy.c \
+			 src/mem/ft_free.c \
 			 src/mem/ft_memset.c \
 			 src/mem/ft_memcmp.c \
 			 src/mem/ft_memmove.c \
@@ -59,6 +60,11 @@ SRCS = 		 src/io/get_next_line.c \
 			 src/char/ft_isprint.c \
 			 src/char/ft_isalpha.c \
 			 src/char/ft_isascii.c \
+			 src/stack/ft_stackadd_front.c \
+			 src/stack/ft_stackadd_back.c \
+			 src/stack/ft_stacksize.c \
+			 src/stack/ft_stacknew.c \
+			 src/stack/ft_stacklast.c \
 			 src/linked_lists/ft_lstmap.c \
 			 src/linked_lists/ft_lstnew.c \
 			 src/linked_lists/ft_lstclear.c \
@@ -68,6 +74,7 @@ SRCS = 		 src/io/get_next_line.c \
 			 src/linked_lists/ft_lstiter.c \
 			 src/linked_lists/ft_lstlast.c \
 			 src/linked_lists/ft_lstdelone.c \
+
 
 OBJS = $(SRCS:.c=.o)
 
