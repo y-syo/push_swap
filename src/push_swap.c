@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:12:26 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/18 07:37:51 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/21 22:47:56 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,49 @@
 
 void	sa(t_stack *stack_a)
 {
-	/*echange les 2 elements en haut de la pile
-	print "sa"*/
-	ft_putendl_fd("sa", 1);
+	int	size;
+
+	size = ft_stacksize(stack_a);
+	if (size > 1)
+	{
+		ft_swap(&stack_a[size - 1], &stack_a[size - 2]);
+		ft_putendl_fd("sa", 1);
+	}
 }
 
 void	sb(t_stack *stack_b)
 {
-	/*echange les 2 elements en haut de la pile
-	print "sb"*/
-	ft_putendl_fd("sb", 1);
+	int	size;
+
+	size = ft_stacksize(stack_b);
+	if (size > 1)
+	{
+		ft_swap(&stack_b[size - 1], &stack_b[size - 2]);
+		ft_putendl_fd("sb", 1);
+	}
 }
 
 void	ss(t_stack *stack_a, t_stack *stack_b)
 {
-	/*effectue sa et sb
-	print "ss"*/
+	int	size_a;
+	int	size_b;
+
+	size_a = ft_stacksize(stack_a);
+	size_b = ft_stacksize(stack_b);
+	if (size_a > 1 && size_b > 1)
+	{
+		ft_swap(stack_a, stack_a);
+		ft_swap(stack_b, stack_b);
+	}
 	ft_putendl_fd("ss", 1);
 }
 
 void	pa(t_stack *stack_a, t_stack *stack_b)
 {
-	/*envoie l'element en haut de la pile b -> en haut de la pile a
-	print "pa"*/
-	ft_putendl_fd("pa", 1);
+	if (stack_b)
+	{
+		ft_putendl_fd("pa", 1);
+	}
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)

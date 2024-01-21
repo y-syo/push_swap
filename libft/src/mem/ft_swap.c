@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 00:27:49 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/21 21:32:45 by mmoussou         ###   ########.fr       */
+/*   Created: 2024/01/21 22:20:19 by mmoussou          #+#    #+#             */
+/*   Updated: 2024/01/21 22:28:10 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-/*int	main(int argc, char **argv)
+void	ft_swap(t_stack *a, t_stack *b)
 {
-	t_stack	*stack;
-	char	**split_args;
+	t_stack	swap;
 
-	if (argc < 2)
-		return (-1);
-	stack = fill_struct(argc - 1, argv);
-	replace_nb_init(stack);
-	ft_printf("%S yo", stack);
-	return (0);
-}*/
-
-int	main(void)
-{
-	write(1, "THIS IS CRAZY FR", 16);
-	return (0);
+	swap = *a;
+	*a = *b;
+	*b = swap;
 }

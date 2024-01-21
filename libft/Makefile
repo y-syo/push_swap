@@ -34,6 +34,7 @@ SRCS =		 src/io/get_next_line.c \
 			 src/mem/ft_memcmp.c \
 			 src/mem/ft_memmove.c \
 			 src/mem/ft_bzero.c \
+			 src/mem/ft_swap.c \
 			 src/str/XtoX/ft_atol.c \
 			 src/str/XtoX/ft_itoa.c \
 			 src/str/XtoX/ft_atoi.c \

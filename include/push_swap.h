@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:29:05 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/18 07:40:53 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/21 22:19:55 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+# include <unistd.h>
 # include <stdlib.h>
 
 int		ft_verif_nb(const char *str);

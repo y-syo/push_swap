@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 23:06:24 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/18 01:05:04 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/21 22:28:57 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,24 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+
+/* ------ STACK UTILS ------ */
+
+typedef struct s_stack
+{
+	int				nb_init;
+	int				nb;
+	struct s_stack	*next;
+}					t_stack;
+
+/* ------ uwu ------ */
+
+t_stack		*ft_stacknew(int content);
+int			ft_stacksize(t_stack *stack);
+t_stack		*ft_stacklast(t_stack *stack);
+void		ft_stackadd_back(t_stack **stack, t_stack *new);
+void		ft_stackadd_front(t_stack **stack, t_stack *new);
+
 
 /* CHAR */
 
@@ -37,6 +55,7 @@ void		*ft_memmove(void *dst, const void *src, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t n, size_t elsize);
+void		ft_swap(t_stack *a, t_stack *b);
 
 void		ft_free(const char *str, ...);
 
@@ -102,20 +121,5 @@ void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
-typedef struct s_stack
-{
-	int				nb_init;
-	int				nb;
-	struct s_stack	*next;
-}					t_stack;
-
-/* ------ STACK UTILS ------ */
-
-t_stack		*ft_stacknew(int content);
-int			ft_stacksize(t_stack *stack);
-t_stack		*ft_stacklast(t_stack *stack);
-void		ft_stackadd_back(t_stack **stack, t_stack *new);
-void		ft_stackadd_front(t_stack **stack, t_stack *new);
 
 #endif
