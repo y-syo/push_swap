@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 00:29:28 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/18 14:13:29 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/30 02:09:19 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_str(const char *str)
 		i++;
 	while (str[i])
 	{
-		if (str[i] >= '0' || str[i] <= '9')
+		if (str[i] < '0' || str[i] > '9')
 			return (0);
 		i++;
 	}
@@ -32,7 +32,7 @@ int	ft_verif_nb(const char *str)
 {
 	long	atol;
 
-	if (check_str(str))
+	if (!check_str(str))
 		return (0);
 	atol = ft_atol(str);
 	if (atol > 2147483647 || atol < -2147483648)

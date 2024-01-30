@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 01:10:39 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/20 11:39:52 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/30 02:21:33 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ t_stack	*fill_struct(int ac, char **av)
 {
 	char	**splitted_args;
 	t_stack	*stack;
-	t_stack	*new_node;
 	int		i;
 
 	stack = NULL;
@@ -52,7 +51,7 @@ t_stack	*fill_struct(int ac, char **av)
 	while (i < ac)
 	{
 		splitted_args = ft_split(av[i], ' ');
-		if (!split_args)
+		if (!splitted_args)
 		{
 			ft_free("s", &stack);
 			return (NULL);
@@ -62,6 +61,10 @@ t_stack	*fill_struct(int ac, char **av)
 		ft_free("a", &splitted_args);
 		i++;
 	}
-	ft_printf("%S uwu\n", stack);
+	if (!verif_double(stack))
+	{
+		ft_free("s", stack);
+		return (NULL);
+	}
 	return (stack);
 }

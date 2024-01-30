@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_min.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/21 22:20:19 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/21 22:28:10 by mmoussou         ###   ########.fr       */
+/*   Created: 2024/01/30 01:02:38 by mmoussou          #+#    #+#             */
+/*   Updated: 2024/01/30 01:07:13 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_swap(t_stack *a, t_stack *b)
+int	ft_min(int a, int b)
 {
-	t_stack	swap;
-
-	swap = *a;
-	*a = *b;
-	*b = swap;
+	if (a < b)
+		return (a);
+	return (b);
 }
