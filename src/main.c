@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 00:27:49 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/30 02:20:25 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/30 16:48:03 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int	main(int argc, char **argv)
 	}
 	replace_nb_init(stack);
 	ft_printf("%S\n", stack);
-	ft_free("s", stack);
+	ft_free("s", &stack);
 	return (0);
 }

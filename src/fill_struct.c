@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 01:10:39 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/30 02:21:33 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/01/30 17:20:29 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_stack	*fill_struct(int ac, char **av)
 	while (i < ac)
 	{
 		splitted_args = ft_split(av[i], ' ');
-		if (!splitted_args)
+		if (!splitted_args || !splitted_args[0])
 		{
 			ft_free("s", &stack);
 			return (NULL);
@@ -63,7 +63,7 @@ t_stack	*fill_struct(int ac, char **av)
 	}
 	if (!verif_double(stack))
 	{
-		ft_free("s", stack);
+		ft_free("s", &stack);
 		return (NULL);
 	}
 	return (stack);
