@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 00:27:49 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/02/03 02:41:16 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/02/03 23:17:18 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,9 @@ int	main(int argc, char **argv)
 	}
 	replace_nb_init(head.stack_a);
 	ft_printf("%S\n", head.stack_a);
-	sa(&head);
+	if (!is_sorted(head.stack_a))
+		sort(&head);
 	ft_printf("%S\n", head.stack_a);
-	pb(&head);
-	ft_printf("%S\n", head.stack_a);
-	ft_printf("%S\n", head.stack_b);
-	ra(&head);
-	ft_printf("%S\n", head.stack_a);
-	ft_printf("%S\n", head.stack_b);
-	ra(&head);
-	ft_printf("%S\n", head.stack_a);
-	ft_printf("%S\n", head.stack_b);
-
-
 	ft_free("s", &head.stack_a);
 	return (0);
 }

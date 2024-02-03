@@ -6,7 +6,7 @@
 #    By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 07:21:18 by mmoussou          #+#    #+#              #
-#    Updated: 2024/02/03 02:39:38 by mmoussou         ###   ########.fr        #
+#    Updated: 2024/02/03 23:10:10 by mmoussou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,16 +27,17 @@ INCLUDE = ./include
 NAME = push_swap
 
 #find -type f -name "*.c" | sed "s/\.\///g" | xargs -Iname echo "`printf '\t\t\t'`" name "\\"
-SRCS =		src/verif_nb.c \
-			src/is_sorted.c \
-			src/main.c \
-			src/fill_struct.c \
-			src/verif_double.c \
-			src/replace_nb_init.c \
-			src/operations/swap.c \
-			src/operations/push.c \
-			src/operations/rotate.c \
-			src/operations/reverse_rotate.c
+SRCS =                   src/fill_struct.c \
+                         src/verif_nb.c \
+                         src/replace_nb_init.c \
+                         src/operations/push.c \
+                         src/operations/swap.c \
+                         src/operations/reverse_rotate.c \
+                         src/operations/rotate.c \
+                         src/is_sorted.c \
+                         src/main.c \
+                         src/uwu_sort/main_sort.c \
+                         src/verif_double.c
 
 OBJS = $(SRCS:.c=.o)
 

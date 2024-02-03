@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:29:05 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/02/03 02:02:03 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/02/03 22:42:44 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,8 @@ t_stack	*fill_struct(int ac, char **av);
 int		verif_double(t_stack *stack);
 void	replace_nb_init(t_stack *stack);
 int		is_sorted(t_stack *stack_a);
+
+void	small_sort(t_head *head);
+void	sort(t_head *head);
 
 #endif
