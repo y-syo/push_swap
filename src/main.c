@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 00:27:49 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/30 16:48:03 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/02/03 02:41:16 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,35 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack;
+	t_head	head;
 
 	if (argc < 2)
 	{
 		write(2, "Error\n", 6);
 		return (-1);
 	}
-	stack = fill_struct(argc - 1, &argv[1]);
-	if (!stack)
+	head.stack_a = fill_struct(argc - 1, &argv[1]);
+	head.stack_b = NULL;
+	if (!head.stack_a)
 	{
 		write(2, "Error\n", 6);
 		return (-1);
 	}
-	replace_nb_init(stack);
-	ft_printf("%S\n", stack);
-	ft_free("s", &stack);
+	replace_nb_init(head.stack_a);
+	ft_printf("%S\n", head.stack_a);
+	sa(&head);
+	ft_printf("%S\n", head.stack_a);
+	pb(&head);
+	ft_printf("%S\n", head.stack_a);
+	ft_printf("%S\n", head.stack_b);
+	ra(&head);
+	ft_printf("%S\n", head.stack_a);
+	ft_printf("%S\n", head.stack_b);
+	ra(&head);
+	ft_printf("%S\n", head.stack_a);
+	ft_printf("%S\n", head.stack_b);
+
+
+	ft_free("s", &head.stack_a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 07:21:18 by mmoussou          #+#    #+#              #
-#    Updated: 2024/01/30 17:15:46 by mmoussou         ###   ########.fr        #
+#    Updated: 2024/02/03 02:39:38 by mmoussou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,11 @@ SRCS =		src/verif_nb.c \
 			src/main.c \
 			src/fill_struct.c \
 			src/verif_double.c \
-			src/replace_nb_init.c
+			src/replace_nb_init.c \
+			src/operations/swap.c \
+			src/operations/push.c \
+			src/operations/rotate.c \
+			src/operations/reverse_rotate.c
 
 OBJS = $(SRCS:.c=.o)
 
