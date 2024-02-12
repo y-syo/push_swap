@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 23:06:24 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/01/30 01:06:40 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/02/05 14:15:50 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int			ft_putnbr_fd(int n, int fd);
 int			ft_putuhex_fd(unsigned long long nbr, char *base, int fd);
 
 int			ft_printf(const char *str, ...);
+int			ft_printf_fd(int fd, const char *str, ...);
 
 // ---------------- LINKED LISTS ---------------- //
 
